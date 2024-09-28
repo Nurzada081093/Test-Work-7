@@ -2,6 +2,7 @@ import './App.css';
 import Buttons from './Components/Buttons/Buttons';
 import {useState} from 'react';
 import {IItem} from './types';
+import TotalPrice from './Components/TotalPrice/TotalPrice';
 
 const App = () => {
     const [items, setItems] = useState<IItem[]>([
@@ -36,32 +37,28 @@ const App = () => {
 
 
         setItems(copyItems);
-
-        console.log(copyItems);
-        console.log(totalNewPrice);
-        console.log(totalPrice);
-
+        setTotalPrise(totalNewPrice);
     };
 
 
+    const deleteItem = () => {
 
-
+    };
 
     return (
         <div className="container">
             <div className="content">
                 <div className="card order-card">
                     <div className="title">Order Details</div>
-                    <div className="text">
-                        <div className="order-block">
+                    <div className="order-block">
+                        <div className="">
+                            <TotalPrice items={items} deleteItem={deleteItem} totalPrice={totalPrice}/>
                         </div>
                     </div>
                 </div>
                 <div className="card">
                     <div className="title">Add items</div>
-                    <div className="text">
                         <Buttons items={items} addItem={addItem}/>
-                    </div>
                 </div>
             </div>
         </div>

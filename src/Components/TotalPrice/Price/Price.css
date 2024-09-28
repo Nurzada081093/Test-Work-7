@@ -1,0 +1,33 @@
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.order-item div {
+    margin-right: 10px;
+}
+
+.order-item div:last-child {
+    margin-right: 0;
+}
+
+.order-name {
+    width: 150px;
+    font-weight: 600;
+}
+
+.delete-order-button {
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 30px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.delete-order-button img {
+    margin: 0;
+    padding: 0;
+}
