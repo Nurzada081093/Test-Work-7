@@ -1,0 +1,35 @@
+.button-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 220px;
+    margin: 10px 0;
+    padding: 10px;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button-content:hover {
+    background-color: gray;
+}
+
+.button-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.button-info {
+    width: 120px;
+    height: 60px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.item-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-style: italic;
+}
