@@ -13,8 +13,39 @@ const App = () => {
         {id: 6, name: 'Cola', price: 40, count: 0, image: 'https://img.icons8.com/3d-fluency/50/cola.png'},
     ]);
 
+    const [totalPrice, setTotalPrise] = useState<number>(0);
 
-    const addItem = () => {};
+
+    const addItem = (id:number) => {
+        const index:number = items.findIndex((item) => item.id === id);
+
+        const copyItems = items.map((item, i) => {
+            if (i === index) {
+                return {
+                    ...item,
+                    count: item.count + 1,
+                };
+            }
+            return {...item};
+        });
+
+        const totalNewPrice = copyItems.reduce((acc, item) => {
+            acc += item.count * item.price;
+            return acc;
+        }, 0);
+
+
+        setItems(copyItems);
+
+        console.log(copyItems);
+        console.log(totalNewPrice);
+        console.log(totalPrice);
+
+    };
+
+
+
+
 
     return (
         <div className="container">
