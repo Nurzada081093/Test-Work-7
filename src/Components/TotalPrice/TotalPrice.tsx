@@ -29,7 +29,7 @@ const TotalPrice: React.FC<IProps> = ({totalPrice, items, deleteItem}) => {
             ) : (
                 <div className="empty-block">
                     <p>Order is empty!</p>
-                    <p>Please add some items!</p>
+                    <p>Please make an order!</p>
                 </div>
             )}
         </div>

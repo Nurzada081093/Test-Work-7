@@ -5,6 +5,11 @@
     font-size: 20px;
 }
 
+.order-item:hover {
+    border-bottom: 2px solid gray;
+    padding-left: 10px;
+}
+
 .order-item div {
     margin-right: 10px;
 }
@@ -25,9 +30,12 @@
     height: 30px;
     margin-left: 0;
     padding-left: 0;
+    cursor: pointer;
 }
 
 .delete-order-button img {
     margin: 0;
     padding: 0;
+    width: 40px;
+    height: 40px;
 }

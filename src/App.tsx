@@ -12,13 +12,14 @@ const App = () => {
         {id: 4, name: 'Tea', price: 50, count: 0, image: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-tea-morning-flaticons-lineal-color-flat-icons.png'},
         {id: 5, name: 'Fries', price: 45, count: 0, image: 'https://img.icons8.com/3d-fluency/50/mcdonalds-french-fries.png'},
         {id: 6, name: 'Cola', price: 40, count: 0, image: 'https://img.icons8.com/3d-fluency/50/cola.png'},
+        {id: 7, name: 'Pizza', price: 100, count: 0, image: 'https://img.icons8.com/papercut/50/pizza.png'},
+        {id: 8, name: 'Juice', price: 60, count: 0, image: 'https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/external-juice-healthy-lifestyle-icongeek26-linear-colour-icongeek26.png'},
     ]);
 
     const [totalPrice, setTotalPrise] = useState<number>(0);
 
-
     const addItem = (id:number) => {
-        const index:number = items.findIndex((item) => item.id === id);
+        const index:number = items.findIndex((item):boolean => item.id === id);
 
         const copyItems = items.map((item, i) => {
             if (i === index) {
@@ -30,19 +31,35 @@ const App = () => {
             return {...item};
         });
 
-        const totalNewPrice = copyItems.reduce((acc, item) => {
+        const totalNewPrice: number = copyItems.reduce((acc, item) => {
             acc += item.count * item.price;
             return acc;
         }, 0);
-
 
         setItems(copyItems);
         setTotalPrise(totalNewPrice);
     };
 
+    const deleteItem = (id:number) => {
+        const index:number = items.findIndex((item): boolean => item.id === id);
 
-    const deleteItem = () => {
+        const copyItems = items.map((item, i) => {
+            if (i === index) {
+                return {
+                    ...item,
+                    count: item.count - 1,
+                };
+            }
+            return {...item};
+        });
 
+        const totalNewPrice: number = copyItems.reduce((acc, item) => {
+            acc += item.count * item.price;
+            return acc;
+        }, 0);
+
+        setItems(copyItems);
+        setTotalPrise(totalNewPrice);
     };
 
     return (
@@ -51,14 +68,12 @@ const App = () => {
                 <div className="card order-card">
                     <div className="title">Order Details</div>
                     <div className="order-block">
-                        <div className="">
-                            <TotalPrice items={items} deleteItem={deleteItem} totalPrice={totalPrice}/>
-                        </div>
+                        <TotalPrice items={items} deleteItem={deleteItem} totalPrice={totalPrice}/>
                     </div>
                 </div>
                 <div className="card">
-                    <div className="title">Add items</div>
-                        <Buttons items={items} addItem={addItem}/>
+                    <div className="title">Menu</div>
+                    <Buttons items={items} addItem={addItem}/>
                 </div>
             </div>
         </div>

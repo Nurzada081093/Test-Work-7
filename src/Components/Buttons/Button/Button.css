@@ -4,7 +4,7 @@
     justify-content: space-between;
     border: 1px solid gray;
     border-radius: 10px;
-    width: 220px;
+    width: 240px;
     margin: 10px 0;
     padding: 10px;
     align-items: center;
@@ -13,7 +13,8 @@
 }
 
 .button-content:hover {
-    background-color: gray;
+    background-color: rgb(251, 249, 249);
+    width: 250px;
 }
 
 .button-icon {
@@ -22,7 +23,7 @@
 }
 
 .button-info {
-    width: 120px;
+    width: 140px;
     height: 60px;
     text-align: left;
     font-size: 18px;

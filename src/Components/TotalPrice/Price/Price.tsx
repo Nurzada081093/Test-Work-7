@@ -19,7 +19,6 @@ const Price: React.FC<IProps> = ({item, deleteItem}) => {
                     alt="close-window"/>
                 </button>
             </div>
-
         </div>
     );
 };
